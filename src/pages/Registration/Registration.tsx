@@ -11,9 +11,10 @@ import uploadFile from '../../services/uploadFile';
 import { API_URL } from '../../constants';
 import axios, { AxiosError } from 'axios';
 import toast from 'react-hot-toast';
+import { User } from '../../interfaces/User';
 
 const Registration = () => {
-  const [userData, setUserData] = useState({
+  const [userData, setUserData] = useState<User>({
     firstName: '',
     lastName: '',
     email: '',
