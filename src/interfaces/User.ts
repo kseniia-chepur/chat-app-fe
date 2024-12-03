@@ -5,3 +5,5 @@ export interface User {
   password: string;
   photo?: string;
 };
+
+export type PartialUser = Partial<User>;
