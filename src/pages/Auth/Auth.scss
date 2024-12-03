@@ -1,0 +1,136 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 25px;
+    margin-block: 30px 20px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-c);
+  padding: 30px 30px 10px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 15px;
+
+    &--photo {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+    color: var(--accent-c);
+
+    &--photo {
+      cursor: pointer;
+      color: var(--primary-c);
+      font-size: 14px;
+      background-color: var(--gray-c);
+      padding: 15px 30px;
+      margin-block: 10px;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      transition: var(--transition);
+
+      &:hover {
+        border-color: var(--accent-c);
+        background-color: var(--light-gray-c);
+      }
+    }
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: 10px;
+    outline: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    color: var(--dark-slate-gray-c);
+    background-color: var(--gray-c);
+
+    &:focus {
+      border-color: var(--accent-c);
+    }
+
+    &--photo {
+      display: none;
+    }
+  }
+
+  &__close-icon {
+    color: var(--primary-c);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+    left: 5px;
+
+    &:hover {
+      color: var(--accent-c);
+    }
+  }
+
+  &__submit-btn {
+    align-self: center;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    background-color: var(--accent-c);
+    color: var(--white-c);
+    padding: 10px 25px;
+    margin-block: 10px 20px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+      transform: scale(1.02);
+      background-color: var(--light-accent-c);
+    }
+  }
+
+  &__alt {
+    align-self: center;
+    text-align: center;
+    font-size: 26px;
+    margin: 0;
+  }
+
+  &__ref {
+    align-self: center;
+    font-weight: 700;
+    margin-block: 25px;
+  }
+
+  &__link {
+    align-self: center;
+    text-decoration: none;
+    color: var(--accent-c);
+    font-size: 18px;
+    font-weight: 700;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--dark-accent-c);
+    }
+  }
+}
