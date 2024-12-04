@@ -1,0 +1,34 @@
+.sidebar {
+  box-shadow: var(--box-shadow);
+
+  &__profile {
+    border: none;
+    cursor: pointer;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  }
+
+  &__title {
+    color: var(--accent-c);
+    font-size: 20px;
+    padding-inline: 20px;
+  }
+
+  &__top-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--primary-c);
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--dark-slate-gray-c);
+    }
+  }
+}

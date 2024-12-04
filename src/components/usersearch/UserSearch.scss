@@ -1,0 +1,83 @@
+.search {
+  position: absolute;
+  width: 28%;
+  top: 25%;
+  left: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 0;
+  border-radius: 5px;
+  border: 2px solid var(--accent-c);
+  box-shadow: var(--box-shadow);
+
+  &__form {
+    position: relative;
+    width: 90%;
+    margin-left: 10%;
+    margin-bottom: 10px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+  }
+
+  &__input {
+    width: 80%;
+    margin: 0 auto;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    color: var(--dark-slate-gray-c);
+    background-color: var(--gray-c);
+
+     &:focus {
+      border-color: var(--accent-c);
+    }
+  }
+  &__result {
+    width: 90%;
+    margin-top: 20px;
+    padding: 10px 20px 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    color: var(--dark-slate-gray-c);
+    background-color: var(--gray-c);
+    overflow-y: auto;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+  }
+
+  &__not-found-msg {
+    font-size: 18px;
+    font-weight: 700;
+    align-self: center;
+  }
+
+}
+
+.close-btn {
+  font-family: inherit;
+  color: inherit;
+  border: 1px solid transparent;
+  background-color: var(--accent-c);
+  border-radius: 5px;
+  padding: 5px 12px;
+  margin: 5px auto;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    background-color: var(--light-accent-c);
+  }
+}
