@@ -2,7 +2,7 @@ import './App.scss';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <Toaster />
@@ -11,6 +11,6 @@ function App() {
       </main>
     </>
   );
-}
+};
 
 export default App;

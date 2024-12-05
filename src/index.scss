@@ -1,10 +1,12 @@
 :root {
   --primary-c: #566467;
   --accent-c: #24bfd9;
-  --light-accent-c: #69d2e4;
+  --light-accent-c: #78d6e6;
   --dark-accent-c: #0399b4;
   --dark-slate-gray-c: #31474b;
+  --light-blue-c: #daf0f4;
   --white-c: #fff;
+  --white-smoke: #f5f5f5;
   --gray-c: #e5e5e5;
   --light-gray-c: #f0f0f0;
   --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -13,13 +15,11 @@
 
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: "Ubuntu Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f5f5;
+  color: var(--primary-c);
+  background-color: var(--white-smoke);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
