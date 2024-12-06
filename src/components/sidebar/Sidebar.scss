@@ -7,16 +7,25 @@
   }
 
   &__top {
+    position: fixed;
+    top: 0;
+    width: calc(30% - 40px);
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 5px 20px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  }
+
+  &__chat-list {
+    height: calc(100vh - 70px);
+    margin-top: 70px;
   }
 
   &__title {
     color: var(--accent-c);
     font-size: 20px;
-    padding-inline: 20px;
+    padding: 20px;
+    margin: 0;
   }
 
   &__top-btn {

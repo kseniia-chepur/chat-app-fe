@@ -10,6 +10,7 @@ import { setUser } from '../../redux/userSlice';
 
 type Props = {
   user: {
+    _id: string;
     firstName: string;
     lastName: string;
     photo?: string;
@@ -59,6 +60,7 @@ const UserDetailsEdit: React.FC<Props> = ({ user, onClose }) => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    console.log('x')
 
     const URL = `${API_URL.backend}/update`;
 
@@ -108,6 +110,7 @@ const UserDetailsEdit: React.FC<Props> = ({ user, onClose }) => {
         </div>
         <div className='form__block form__block--photo'>
           <Profile
+            userId={user._id}
             firstName={userData.firstName}
             lastName={userData.lastName}
             imageUrl={userData.photo}

@@ -4,7 +4,7 @@ import { FiLogOut } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import Profile from '../Profile/Profile';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../../redux/userSlice';
 import Cookies from 'js-cookie';
@@ -13,6 +13,7 @@ import UserDetailsEdit from '../UserDetailsEdit/UserDetailsEdit';
 
 const Sidebar: React.FC = () => {
   const user = useSelector((state: RootState) => state.user);
+  const { socketConnection } = useSelector((state: RootState) => state.user);
   const [isEditingUser, setIsEditingUser] = useState(false);
   const [searchUserMode, setSearchUserMode] = useState(false);
 
@@ -43,6 +44,7 @@ const Sidebar: React.FC = () => {
           onClick={handleProfileClick}
         >
           <Profile
+            userId={user._id}
             firstName={user.firstName}
             lastName={user.lastName}
             imageUrl={user.photo}

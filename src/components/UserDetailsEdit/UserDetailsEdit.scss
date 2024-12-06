@@ -1,11 +1,14 @@
 .userDetailsEditMode {
   position: absolute;
-  top: 10%;
-  left: 40%;
+  top: 100%;
+  left: 150%;
+  width: 60%;
   padding: 20px 50px;
   border-radius: 10px;
+  background-color: var(--light-gray-c);
   border: 1px solid var(--accent-c);
   box-shadow: var(--box-shadow);
+  z-index: 10;
 
   &__title {
     text-align: center;
@@ -27,9 +30,9 @@
     background-color: transparent;
     cursor: pointer;
     transition: var(--transition);
+
     &:hover {
        transform: scale(1.05);
-
     }  
   }
 
@@ -48,6 +51,7 @@
     color: var(--white-c);
     border-radius: 5px;
     border: 2px solid var(--accent-c);
+    outline: none;
     padding: 5px 10px;
     width: 75px;
     cursor: pointer;

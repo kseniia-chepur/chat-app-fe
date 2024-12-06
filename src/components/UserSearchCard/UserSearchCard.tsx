@@ -10,7 +10,6 @@ type Props = {
     email: string;
     photo?: string;
   };
-
   onClose: () => void;
 };
 
@@ -20,6 +19,7 @@ const UserSearchCard: React.FC<Props> = ({ user, onClose }) => {
       <div className='userSearchCard'>
         <div>
           <Profile
+            userId={user._id}
             firstName={user.firstName}
             lastName={user?.lastName}
             imageUrl={user?.photo}

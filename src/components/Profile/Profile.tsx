@@ -1,20 +1,37 @@
 import './Profile.scss';
 import getRandomBgColor from '../../services/getRandomBgColor';
 import { bgColors } from '../../constants';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
 type Props = {
-  firstName: string;
-  lastName: string;
+  userId?: string;
+  firstName?: string;
+  lastName?: string;
   imageUrl?: string;
 };
 
-const Profile: React.FC<Props> = ({ firstName, lastName, imageUrl}: Props) => {
-  const profileInitials = firstName[0] + lastName[0];
+const Profile: React.FC<Props> = ({
+  userId,
+  firstName,
+  lastName,
+  imageUrl,
+}) => {
+  const { onlineUsers } = useSelector((state: RootState) => state.user);
+
+  const isUserOnline = userId && onlineUsers.includes(userId);
+
+  const profileInitials =
+    firstName && lastName ? firstName[0] + lastName[0] : 'NN';
 
   return (
     <div className='profile'>
       {imageUrl ? (
-        <img className='profile__img' src={imageUrl} alt={`${firstName} ${lastName}`} />
+        <img
+          className='profile__img'
+          src={imageUrl}
+          alt={`${firstName} ${lastName}`}
+        />
       ) : (
         <div
           style={{ backgroundColor: getRandomBgColor(0, bgColors.length - 1) }}
@@ -23,6 +40,8 @@ const Profile: React.FC<Props> = ({ firstName, lastName, imageUrl}: Props) => {
           {profileInitials}
         </div>
       )}
+
+      {isUserOnline && <div className='profile__online-status'></div>}
     </div>
   );
 };
