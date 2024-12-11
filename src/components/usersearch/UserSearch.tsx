@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import './UserSearch.scss';
 import { IoSearchOutline } from 'react-icons/io5';
 import UserSearchCard from '../UserSearchCard/UserSearchCard';
@@ -41,11 +41,11 @@ const UserSearch: React.FC<Props> = ({ onClose }) => {
   }, [search]);
 
   return (
-    <div className='search'>
-      <form className='search__form'>
+    <dialog className='search'>
+      <form method='dialog' className='search__form'>
         <input
           type='text'
-          placeholder='Search user by name or email'
+          placeholder='Search user'
           className='search__input'
           onChange={handleInputChange}
           value={search}
@@ -54,8 +54,8 @@ const UserSearch: React.FC<Props> = ({ onClose }) => {
           <IoSearchOutline size={20} />
         </div>
       </form>
-      
-      <div className='search__result'>
+
+      <div className='search__result scrollbar'>
         {notFoundMsg && !userSearchResult?.length && (
           <p className='search__not-found-msg'>User not found</p>
         )}
@@ -68,9 +68,9 @@ const UserSearch: React.FC<Props> = ({ onClose }) => {
       </div>
 
       <button className='close-btn' onClick={onClose}>
-        <IoClose />
+        <IoClose size={15} />
       </button>
-    </div>
+    </dialog>
   );
 };
 

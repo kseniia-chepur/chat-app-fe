@@ -3,6 +3,7 @@
 
   &__profile {
     border: none;
+    outline: none;
     cursor: pointer;
   }
 
@@ -17,14 +18,17 @@
   }
 
   &__chat-list {
-    height: calc(100vh - 70px);
     margin-top: 70px;
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
   }
 
   &__title {
     color: var(--accent-c);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     font-size: 20px;
-    padding: 20px;
+    padding: 20px 20px 10px;
     margin: 0;
   }
 
@@ -39,5 +43,53 @@
     &:hover {
       color: var(--dark-slate-gray-c);
     }
+  }
+}
+
+.preview {
+  padding-inline: 10px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary-c);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  &:hover {
+    background-color: var(--gray-c);
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 10px;
+  }
+
+  &__name {
+    font-size: 16px;
+    color: var(--dark-slate-gray-c);
+    margin: 0;
+  }
+
+  &__last-msg {
+    font-size: 14px;
+    color: var(--taupe-gray-c);
+    margin: 0;
+    max-height: 15px;
+    overflow: hidden;
+  }
+
+  &__unread-msg {
+    font-size: 12px;
+    font-weight: 700;
+    background-color: var(--accent-c);
+    color: var(--white-c);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -1,28 +1,29 @@
 .search {
-  position: absolute;
-  width: 28%;
-  top: 25%;
-  left: 1%;
+  position: fixed;
+  width: 25%;
+  top: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 20px 0;
+  padding: 20px;
   border-radius: 5px;
-  border: 2px solid var(--accent-c);
+  border: none;
+  background-color: var(--light-accent-c);
   box-shadow: var(--box-shadow);
-
+  color: var(--primary-c);
+  
   &__form {
     position: relative;
     width: 90%;
     margin-left: 10%;
-    margin-bottom: 10px;
   }
 
   &__icon {
     position: absolute;
     top: 20%;
     right: 15%;
+    color: inherit;
   }
 
   &__input {
@@ -31,24 +32,22 @@
     font-family: inherit;
     font-size: 12px;
     outline: none;
-    padding: 10px;
+    padding: 7px 10px;
     border-radius: 5px;
     border: 1px solid transparent;
     color: var(--dark-slate-gray-c);
-    background-color: var(--gray-c);
+    background-color: var(--white-c);
 
      &:focus {
       border-color: var(--accent-c);
+      background-color: var(--gray-c);
     }
   }
   &__result {
     width: 90%;
     margin-top: 20px;
-    padding: 10px 20px 10px;
+    padding: 0 20px 10px;
     border-radius: 5px;
-    border: 1px solid transparent;
-    color: var(--dark-slate-gray-c);
-    background-color: var(--gray-c);
     overflow-y: auto;
     max-height: 300px;
     display: flex;
@@ -61,23 +60,28 @@
   &__not-found-msg {
     font-size: 18px;
     font-weight: 700;
+    color: inherit;
     align-self: center;
   }
-
 }
 
 .close-btn {
-  font-family: inherit;
   color: inherit;
   border: 1px solid transparent;
-  background-color: var(--accent-c);
+  background-color: var(--white-c);
   border-radius: 5px;
-  padding: 5px 12px;
-  margin: 5px auto;
+  padding: 3px 35px;
+  margin-top: 15px;
+  align-self: flex-end;
   cursor: pointer;
-  text-align: left;
+  transition: var(--transition);
 
   &:hover {
-    background-color: var(--light-accent-c);
+    border-color: var(--accent-c);
+    background-color: var(--gray-c);
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 }

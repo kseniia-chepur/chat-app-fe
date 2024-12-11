@@ -1,5 +1,5 @@
 import './Profile.scss';
-import getRandomBgColor from '../../services/getRandomBgColor';
+import getRandomBgColor from '../../services/getRandomColor';
 import { bgColors } from '../../constants';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
