@@ -103,8 +103,11 @@
     transition: var(--transition);
 
     &:hover {
-      transform: scale(1.02);
       background-color: var(--light-accent-c);
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 

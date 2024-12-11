@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, MouseEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Auth.scss';
 import { API_URL } from '../../constants';
@@ -8,12 +8,12 @@ import { PartialUser } from '../../interfaces/User';
 import { useDispatch } from 'react-redux';
 import { setToken } from '../../redux/userSlice';
 
-const Login = () => {
+const Login: React.FC = () => {
   const [userData, setUserData] = useState<PartialUser>({
     email: '',
     password: '',
   });
-
+ 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -43,9 +43,8 @@ const Login = () => {
 
       toast.success(response.data.message);
 
-      const token = response?.data?.token;
-      dispatch(setToken(token));
-      localStorage.setItem('token', token);
+      dispatch(setToken(response.data.token));
+      localStorage.setItem('token', response.data.token);
 
       setUserData({
         email: '',

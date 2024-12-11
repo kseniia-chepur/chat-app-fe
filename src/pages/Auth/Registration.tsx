@@ -11,10 +11,10 @@ import uploadFile from '../../services/uploadFile';
 import { API_URL } from '../../constants';
 import axios, { AxiosError } from 'axios';
 import toast from 'react-hot-toast';
-import { User } from '../../interfaces/User';
+import { PartialUser, User } from '../../interfaces/User';
 
-const Registration = () => {
-  const [userData, setUserData] = useState<User>({
+const Registration: React.FC = () => {
+  const [userData, setUserData] = useState<PartialUser>({
     firstName: '',
     lastName: '',
     email: '',
@@ -47,7 +47,7 @@ const Registration = () => {
         ...prevData,
         photo: uploadedPhoto?.url,
       }));
-    }        
+    }
   };
 
   const handleUploadPhotoCancel = (e: MouseEvent<HTMLElement>) => {
