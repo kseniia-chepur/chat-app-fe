@@ -9,3 +9,4 @@ export interface Conversation {
   lastMsg: Message;
   userDetails: User;
 }
+

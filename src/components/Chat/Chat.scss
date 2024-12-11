@@ -1,0 +1,120 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    position: fixed;
+    top: 0;
+    height: 40px;
+    width: 70%;
+    padding: 15px 20px;
+    background-color: var(--white-c);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__content {
+    margin-top: 70px;
+    height: calc(100vh - 170px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 10px 20px;
+    background-color: var(--light-blue-c);
+  }
+
+  &__messages {
+    padding-block: 5px;
+  }
+
+  &__new-message {
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    width: 70%;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__new-message-input {
+    font-family: inherit;
+    color: inherit;
+    background-color: var(--white-smoke-c);
+    width: 63vw;
+    border: none;
+    outline: none;
+    padding-block: 10px;
+  }
+
+  &__send-btn {
+    color: var(--accent-c);
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--dark-accent-c);
+    }
+  }
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &--current-user {
+    align-items: flex-end;
+  }
+
+  &__text {
+    width: fit-content;
+    margin: 0;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: var(--white-c);
+    background-color: var(--dark-slate-gray-c);
+
+    &--current-user {
+      color: var(--primary-c);
+      background-color: var(--white-c);
+    }
+  }
+
+  &__time {
+    margin-block: 0 15px;
+    font-size: 12px;
+  }
+}
+
+.user {
+  &__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__name {
+    margin-bottom: 5px;
+  }
+  &__status {
+    margin: 0;
+    color: var(--accent-c);
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--dark-slate-gray-c);
+}

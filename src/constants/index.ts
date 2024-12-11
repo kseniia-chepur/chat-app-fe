@@ -15,3 +15,8 @@ export const bgColors = [
   '#7dd3fc',
   '#60a5fa',
 ];
+
+export enum NetworkStatus {
+  ONLINE = 'online',
+  OFFLINE = 'offline',
+};
