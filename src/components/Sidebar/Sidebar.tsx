@@ -10,7 +10,7 @@ import { logout } from '../../redux/userSlice';
 import Cookies from 'js-cookie';
 import UserSearch from '../UserSearch/UserSearch';
 import { Conversation } from '../../interfaces/Conversation';
-import CurrentUserCard from '../CurrentUserCard/CurrentUserCard';
+import CurrentUserCard from '../UserDetailsEdit/CurrentUserCard';
 
 const Sidebar: React.FC = () => {
   const currentUser = useSelector((state: RootState) => state.user);
