@@ -1,6 +1,7 @@
 export const API_URL = {
   cloudinary: 'https://api.cloudinary.com/v1_1/dzudu6utt/auto/upload',
-  backend: 'https://chat-app-be-et3r.onrender.com',
+  // backend: 'https://chat-app-be-et3r.onrender.com',
+  backend: 'http://localhost:8000',
 };
 
 export const bgColors = [
