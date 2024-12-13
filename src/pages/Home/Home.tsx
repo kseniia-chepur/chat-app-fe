@@ -8,9 +8,9 @@ import {
   setSocketConnection,
   setUser,
 } from '../../redux/userSlice';
-import Sidebar from '../../components/Sidebar/Sidebar';
 import './Home.scss';
 import io from 'socket.io-client';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
