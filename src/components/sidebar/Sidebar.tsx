@@ -9,8 +9,8 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { logout } from '../../redux/userSlice';
 import Cookies from 'js-cookie';
 import UserSearch from '../UserSearch/UserSearch';
-import CurrentUserCard from '../CurrentUserCard/CurrentUserCard';
 import { Conversation } from '../../interfaces/Conversation';
+import CurrentUserCard from '../UserDetailsEdit/CurrentUserCard';
 
 const Sidebar: React.FC = () => {
   const currentUser = useSelector((state: RootState) => state.user);
@@ -28,7 +28,6 @@ const Sidebar: React.FC = () => {
 
       socketConnection.on('conversation', (data) => {
         const conversationUser = data.map((chat: Conversation) => {
-          console.log(chat);
           const userDetails =
             currentUser._id === chat.receiver._id ? chat.sender : chat.receiver;
 
@@ -111,7 +110,7 @@ const Sidebar: React.FC = () => {
                 </div>
                 <div className='preview__content'>
                   <h3 className='preview__name'>{`${chat.userDetails.firstName} ${chat.userDetails.lastName}`}</h3>
-                  <p className='preview__last-msg'>{chat.lastMsg.text}</p>
+                  <p className='preview__last-msg'>{chat?.lastMsg?.text}</p>
                 </div>
               </div>
               {!!chat.unreadMsg && (

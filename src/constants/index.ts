@@ -11,9 +11,9 @@ export const bgColors = [
   '#22c55e',
   '#34d399',
   '#14b8a6',
-  '#06b6d4',
+  '#d8bc66',
   '#7dd3fc',
-  '#60a5fa',
+  '#bd7dbd',
 ];
 
 export enum NetworkStatus {

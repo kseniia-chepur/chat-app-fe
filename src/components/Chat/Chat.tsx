@@ -21,6 +21,7 @@ const Chat: React.FC = () => {
   const { socketConnection } = useSelector((state: RootState) => state.user);
   const currentUser = useSelector((state: RootState) => state?.user);
   const [userData, setUserData] = useState<PartialUser>({
+    _id: '',
     firstName: '',
     lastName: '',
     email: '',
@@ -39,8 +40,8 @@ const Chat: React.FC = () => {
     : NetworkStatus.OFFLINE;
 
   useEffect(() => {
-    if (currentMsgRef && currentMsgRef.current) {
-      currentMsgRef?.current.scrollIntoView({
+    if (currentMsgRef?.current) {
+      currentMsgRef.current.scrollIntoView({
         behavior: 'smooth',
         block: 'end',
       });
@@ -63,7 +64,7 @@ const Chat: React.FC = () => {
       });
     }
   }, [socketConnection, userId, currentUser]);
-
+ 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.currentTarget;
     setMessage(value);

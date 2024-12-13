@@ -1,11 +1,11 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import './UserSearch.scss';
-import { IoSearchOutline } from 'react-icons/io5';
 import UserSearchCard from '../UserSearchCard/UserSearchCard';
-import { IoClose } from 'react-icons/io5';
 import { API_URL } from '../../constants';
-import axios from 'axios';
 import { User } from '../../interfaces/User';
+import axios from 'axios';
+import { IoClose } from 'react-icons/io5';
+import { IoSearchOutline } from 'react-icons/io5';
 
 type Props = {
   onClose: () => void;
